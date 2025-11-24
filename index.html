@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG - Digital Innovation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 1rem;
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: rgba(30, 30, 46, 0.7);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .card-description {
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(90deg, #4ecdc4, #45b7d1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.5);
+        }
+
+        .btn i {
+            margin-left: 0.5rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 1.5rem;
+            width: 100%;
+        }
+
+        .team-btn {
+            background: linear-gradient(90deg, #ff6b6b, #ffa36b);
+            padding: 0.9rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .team-btn:hover {
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+        }
+
+        .team-section {
+            display: none;
+            margin-top: 3rem;
+            background: rgba(30, 30, 46, 0.9);
+            border-radius: 16px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .team-section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            background: linear-gradient(90deg, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(20, 20, 36, 0.7);
+            border-radius: 12px;
+        }
+
+        .member-icon {
+            font-size: 3rem;
+            margin-right: 1.5rem;
+            color: #4ecdc4;
+        }
+
+        .member-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-info p {
+            color: #b0b0b0;
+            margin-bottom: 0.8rem;
+        }
+
+        .member-social a {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .member-social a i {
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            .team-member {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .member-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">OG</h1>
+            <p class="tagline">Creating tools that make life better.</p>
+        </header>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h2 class="card-title">OG AI</h2>
+                <p class="card-description">AI assistant that helps you.</p>
+                <a href="https://ordinaryai.onrender.com" class="btn">Try Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <h2 class="card-title">OG Movie</h2>
+                <p class="card-description">Watch movies together with friends.</p>
+                <a href="https://two4697612gbwjgbwjkgbwerjkgwbj.onrender.com" class="btn">Watch Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-music"></i>
+                </div>
+                <h2 class="card-title">OG Music</h2>
+                <p class="card-description">Stream your favorite music, create playlists, and discover new artists.</p>
+                <a href="#" class="btn">Coming Soon <i class="fas fa-clock"></i></a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h2 class="card-title">OG Bot</h2>
+                <p class="card-description">Fortnite bots that help you get crown wins and show off cool skins.</p>
+                <a href="#" class="btn">Coming Soon <i class="fas fa-clock"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="#" class="btn team-btn" id="meetTeamBtn">Meet the Team</a>
+    </footer>
+
+    <div class="team-section" id="teamSection">
+        <h2>Our Team</h2>
+        
+        <div class="team-member">
+            <div class="member-icon">
+                <i class="fas fa-crown"></i>
+            </div>
+            <div class="member-info">
+                <h3>Ordinarygamer</h3>
+                <p>Owner & Developer</p>
+                <div class="member-social">
+                    <a href="https://www.tiktok.com/@_ordinarygamer" target="_blank">
+                        <i class="fab fa-tiktok"></i> @_ordinarygamer
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="team-member">
+            <div class="member-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <div class="member-info">
+                <h3>ThatLegendJack</h3>
+                <p>Staff Member & Developer</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('meetTeamBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const teamSection = document.getElementById('teamSection');
+            if (teamSection.style.display === 'block') {
+                teamSection.style.display = 'none';
+            } else {
+                teamSection.style.display = 'block';
+                teamSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
