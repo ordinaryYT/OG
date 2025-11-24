@@ -3,21 +3,16 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Set view engine for EJS-like template rendering
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
-
 // Serve static files
 app.use(express.static(__dirname));
 
-// Main route with environment variables
+// Serve the main HTML file
 app.get('/', (req, res) => {
-    // Pass environment variables to the template
-    res.render('index.html', {
-        env: process.env
-    });
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+// Start server
 app.listen(PORT, () => {
-    console.log(`OG Website running on port ${PORT}`);
+    console.log(`✅ OG Website running on port ${PORT}`);
+    console.log(`🌐 Visit: http://localhost:${PORT}`);
 });
