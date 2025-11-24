@@ -234,7 +234,7 @@
                 </div>
                 <h2 class="card-title">OG AI</h2>
                 <p class="card-description">AI assistant that helps you.</p>
-                <a href="https://ordinaryai.onrender.com" class="btn">Try Now <i class="fas fa-arrow-right"></i></a>
+                <a href="<%= process.env.OG_AI_URL || 'https://ordinaryai.onrender.com' %>" class="btn">Try Now <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="card">
@@ -243,7 +243,7 @@
                 </div>
                 <h2 class="card-title">OG Movie</h2>
                 <p class="card-description">Watch movies together with friends.</p>
-                <a href="https://two4697612gbwjgbwjkgbwerjkgwbj.onrender.com" class="btn">Watch Now <i class="fas fa-arrow-right"></i></a>
+                <a href="<%= process.env.OG_MOVIE_URL || 'https://two4697612gbwjgbwjkgbwerjkgwbj.onrender.com' %>" class="btn">Watch Now <i class="fas fa-arrow-right"></i></a>
             </div>
 
             <div class="card">
@@ -252,7 +252,7 @@
                 </div>
                 <h2 class="card-title">OG Music</h2>
                 <p class="card-description">Stream your favorite music, create playlists, and discover new artists.</p>
-                <a href="#" class="btn">Coming Soon <i class="fas fa-clock"></i></a>
+                <a href="<%= process.env.OG_MUSIC_URL || '#' %>" class="btn">Coming Soon <i class="fas fa-clock"></i></a>
             </div>
 
             <div class="card">
@@ -261,7 +261,7 @@
                 </div>
                 <h2 class="card-title">OG Bot</h2>
                 <p class="card-description">Fortnite bots that help you get crown wins and show off cool skins.</p>
-                <a href="#" class="btn">Coming Soon <i class="fas fa-clock"></i></a>
+                <a href="<%= process.env.OG_BOT_URL || '#' %>" class="btn">Coming Soon <i class="fas fa-clock"></i></a>
             </div>
         </div>
     </div>
